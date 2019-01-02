@@ -9,10 +9,30 @@ https://github.com/mtumilowicz/java11-optional-is-not-functor
 ```
 Type constructor: (-> a) // curried -> a b or equivallent a -> b
 
-fmap :: (a -> b) -> (r -> a) -> (r -> b)
-fmap f g = (.) f g
+map :: (a -> b) -> (r -> a) -> (r -> b)
+map f g = (.) f g
 ```
 
+# proof
+1. `map id = id`
+    ```
+    map id g
+    = {definition of map}
+    (.) id g
+    ```
+1. `map (g . f) = map g . map f`
+    ```
+    map (g . f) h 
+    = {definition of map}
+    (.) (g . f) h
+    = {definition of composing}
+    (.) g (f . h)
+    = {definition of map}
+    map g (f h)
+    = {definition of map}
+    map g map f h
+    ```
+    
 # project description
 We provide simple implementation of Reader Functor:
 ```
