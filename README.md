@@ -36,17 +36,22 @@ map f g = (.) f g
     ```
     
 # project description
-We provide simple implementation of Reader Functor:
-```
-@FunctionalInterface
-interface Reader<R, A> extends Function<R, A> {
-    default <B> Function<R, B> map(Function<A, B> f) {
-        return f.compose(this);
+* We provide simple implementation of Reader Functor:
+    ```
+    @FunctionalInterface
+    interface Reader<R, A> extends Function<R, A> {
+        default <B> Function<R, B> map(Function<A, B> f) {
+            return f.compose(this);
+        }
     }
-}
-
-``` 
-
+    ``` 
+* and basic test
+    ```
+    Reader<BigDecimal, Integer> toInteger = BigDecimal::intValue;
+    Function<BigDecimal, String> mapped = toInteger.map(String::valueOf);
+    
+    assertThat(mapped.apply(BigDecimal.TEN), is("10"));
+    ```
 # additional info
 1. Reader could be extended to monad: 
 https://github.com/aol/cyclops/blob/master/cyclops-pure/src/main/java/cyclops/control/Reader.java
