@@ -7,7 +7,7 @@ https://github.com/mtumilowicz/java11-category-theory-optional-is-not-functor
 
 **Reader functor**:
 ```
-Type constructor: (-> a) // curried -> a b or equivallent a -> b
+Type constructor: (-> a) // curried (-> a b) or equivallent (a -> b)
 
 map :: (a -> b) -> (r -> a) -> (r -> b)
 map f g = (.) f g
@@ -25,7 +25,7 @@ map f g = (.) f g
     map (g . f) h 
     = {definition of map}
     (.) (g . f) h
-    = {definition of composing}
+    = {associativity of composition}
     (.) g (f . h)
     = {definition of map}
     map g (f h)
