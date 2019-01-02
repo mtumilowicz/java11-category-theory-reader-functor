@@ -6,9 +6,9 @@ Basic knowledge and intuition about functors is provided in:
 https://github.com/mtumilowicz/java11-optional-is-not-functor
 
 **Reader functor**:
-
-Type constructor: `-> a` (curried `-> a b`, `a -> b`)
 ```
+Type constructor: -> a (curried -> a b or equivallent a -> b)
+
 fmap :: (a -> b) -> (r -> a) -> (r -> b)
 fmap f g = (.) f g
 ```
