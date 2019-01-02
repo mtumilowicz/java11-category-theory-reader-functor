@@ -30,7 +30,9 @@ map f g = (.) f g
     = {definition of map}
     map g (f h)
     = {definition of map}
-    map g map f h
+    map g (map f h)
+    = { definition of composition }
+    (map g . map f) h
     ```
     
 # project description
