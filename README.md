@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/java11-category-theory-reader-functor.svg?branch=master)](https://travis-ci.com/mtumilowicz/java11-category-theory-reader-functor)
+
 # java11-category-theory-reader-functor
 _Reference_: https://bartoszmilewski.com/2015/01/20/functors/
 
