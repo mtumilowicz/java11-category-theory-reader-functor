@@ -5,7 +5,14 @@ _Reference_: https://bartoszmilewski.com/2015/01/20/functors/
 Basic knowledge and intuition about functors is provided in: 
 https://github.com/mtumilowicz/java11-optional-is-not-functor
 
+**Reader functor**:
+
+Type constructor: `-> a` (curried `-> a b`, `a -> b`)
+
+`fmap :: (a -> b) -> (r -> a) -> (r -> b)`
+
 # project description
+
 
 # additional info
 Reader could be extended to monad: 
