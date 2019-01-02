@@ -17,19 +17,19 @@ map f g = (.) f g
 1. `map id = id`
     ```
     map id g
-    = {definition of map}
+    = { definition of map }
     (.) id g
     ```
 1. `map (g . f) = map g . map f`
     ```
     map (g . f) h 
-    = {definition of map}
+    = { definition of map }
     (.) (g . f) h
-    = {associativity of composition}
+    = { associativity of composition }
     (.) g (f . h)
-    = {definition of map}
+    = { definition of map }
     map g (f h)
-    = {definition of map}
+    = { definition of map }
     map g (map f h)
     = { definition of composition }
     (map g . map f) h
