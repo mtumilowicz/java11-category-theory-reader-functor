@@ -26,7 +26,7 @@ interface Reader<R, A> extends Function<R, A> {
 ``` 
 
 # additional info
-Reader could be extended to monad: 
+1. Reader could be extended to monad: 
 https://github.com/aol/cyclops/blob/master/cyclops-pure/src/main/java/cyclops/control/Reader.java
-and used for dependency injection: 
+1. and used for dependency injection: 
 https://github.com/aol/cyclops/wiki/Reader-:-functional-dependency-injection
