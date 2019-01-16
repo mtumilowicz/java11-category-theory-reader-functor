@@ -42,15 +42,19 @@ map f g = (.) f g
     ```
     @FunctionalInterface
     interface Reader<R, A> extends Function<R, A> {
-        default <B> Function<R, B> map(Function<A, B> f) {
-            return f.compose(this);
+        default <B> Reader<R, B> map(Function<A, B> f) {
+            return asReader(f.compose(this));
+        }
+        
+        default <X, Y> Reader<X, Y> asReader(Function<X, Y> f) {
+            return f::apply;
         }
     }
     ``` 
 * and basic test
     ```
     Reader<BigDecimal, Integer> toInteger = BigDecimal::intValue;
-    Function<BigDecimal, String> mapped = toInteger.map(String::valueOf);
+    Reader<BigDecimal, String> mapped = toInteger.map(String::valueOf);
     
     assertThat(mapped.apply(BigDecimal.TEN), is("10"));
     ```
